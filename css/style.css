@@ -7,7 +7,7 @@ body {
 .header {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom right, rgba(0, 205, 172, 0.7), rgba(2, 170, 176, 0.7));
+    background: linear-gradient(to bottom right, #FFD200, #F7971E);
     
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ h1 {
 }
 
 #under-title {
-    font-weight: 400;
+    font-weight: 500;
     margin-top: -40px;
     color: white;
     font-size: 23px;
@@ -42,7 +42,7 @@ h1 {
 .sec_1 {
     width: 100vw;
     height: 75vh;
-    background-color: #E4F1F3;
+    background-color: #fff;
     overflow: hidden;
 }
 
@@ -81,7 +81,7 @@ h2 {
 .sec_2 {
     width: 100vw;
     height: 70vh;
-    background-color: #fff;
+    background-color: rgba(253, 194, 8, 0.2);
 }
 
 #iphone-3 {
@@ -108,5 +108,5 @@ h2 {
 .bottom {
     width: 100vw;
     height: 40vh;
-    background-color: #E4F1F3;
+    background-color: #fff;
 }
