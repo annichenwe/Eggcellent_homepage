@@ -8,56 +8,112 @@ body {
     overflow-x: hidden;
 }
 
+/*PICTURE FADE-IN-ANIMATION TRIGGERD BY JAVASCRIPT*/
+.appear {
+    transform: translate(100%, 2px) scale(.8);
+    transition: transform 2.0s ease, opacity .9s ease;
+    opacity: 0;
+}
+
+.appear2 {
+    transform: translate(-80%, 2px) scale(.8);
+    transition: transform 2.0s ease, opacity 1.5s ease;
+    opacity: 0;
+}
+
+
+.visible {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+}
+
+
 /*HEADER*/
 .header {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom right, #FFD200, #F7971E);
+    background-color: white;
     
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    
     text-align: center;
     
     overflow: hidden;
 }
 
+.wrap {
+    background: linear-gradient(to bottom right, #FFD200, #F7971E);
+    width: 100vw;
+    height: 80vh;
+}
+
 #egg {
-    height: 500px;
+    height: 600px;
     width: auto;
     margin: 0 auto;
     
+    animation: egg 0.8s cubic-bezier(1, 1.19, 1, .99);
+}
+
+@keyframes egg {
+    0% { transform: scale(0.1);
+        opacity: 0; 
+    }
+    
+    100% { transform: scale(1);
+        opacity: 1; }
+}
+
+.anim {
+    animation: text-animation 1.5s cubic-bezier(1, 1.19, 1, .99);
+}
+
+@keyframes text-animation {
+    0%{ transform: translateY(200px);
+        opacity: 0;
+    }
+    90% {opacity: 0;}
+    100%{ transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
 h1 {
-    margin-top: -10px;
+    margin-top: -400px;
     font-weight: 700;
-    font-size: 90px;
+    font-size: 200px;
     color: white;
     text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.18);
+    text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.40);
+    animation: txt 0.8s cubic-bezier(1, 1.19, 1, .99);
 }
 
-#under-title {
+@keyframes txt {
+    0% { transform: scale(0.7);
+         
+    }
+    
+    100% { transform: scale(1);
+         }
+}
+
+.under-title {
     font-weight: 500;
-    margin-top: -40px;
+    margin-top: 180px;
     color: white;
-    font-size: 23px;
+    font-size: 40px;
     text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.18);
 }
 
-.wrapper1 {
-    width: 100%;
-}
-
+/*CLASSES USED FOR FLEX, SIZE AND HIGHT*/
 .contwrap {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    height: 500px;
-    width: 900px;
+    height: 85vh;
+    width: 80vw;
 }
 
 .picture {
@@ -68,10 +124,7 @@ h1 {
 
 .content{
     width: 50%;
-}
-
-.text {
-    
+    height: 500px;
 }
 
 .light {
@@ -79,37 +132,138 @@ h1 {
 }
 
 .dark {
-    background-color: rgba(253, 194, 8, 0.2)
-}
-
-#iphone-2 {
-    height: 600px;
-    margin-top: 130px;
+    background-color: rgba(253, 194, 8, 0.1)
 }
 
 h2 {
     color: #F7971E;
-    font-size: 32px;
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.18);
 }
 
-#favorite {
+p{
+    padding-left: 55px;
+    padding-right: 45px;
     color: black;
     font-size: 20px;
-    width: 300px;
+
 }
 
-
-#iphone-3 {
-    height: 600px;
-    margin-top: 150px;
-}
-
-#timer {
-    font-size: 20px;
-    width: 350px;
+/*PICTURES OF THE APP*/
+#img-one {
+    height: 800px;
     
 }
 
+#img-two {
+    height: 800px;
+    
+}
+
+/*DOWNLOAD SECTION*/
+.bottom {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 200px;
+    width: 900px;
+}
+
+.btn {
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 2px;
+    color: white;
+    background: linear-gradient(to bottom right, #FFD200, #F7971E);
+    border-radius: 45px;
+    width: 500px;
+    height: 60px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.18);
+}
+
+.btn:active {
+    background: linear-gradient(to bottom right, #F7971E, #FFD200);
+}
+
+
+a {
+    text-decoration: none;
+}
 
 
 
+
+
+
+/*RESPONSIV*/
+
+@media screen and (max-width: 900px) {
+    
+    h1 {
+       font-size: 60px; 
+    }
+    
+    .content {
+        width: 100vw;
+    }
+    
+    
+    .contwrap {
+        width: 100vw;
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .wrapper1 {
+        width: 100vw;
+    }
+    
+    #iphone-2 {
+    
+    margin-top: 10px;
+    }
+    
+    #iphone-3 {
+    
+    margin-top: 10px;
+}
+    .text {
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .text1 {
+        padding-bottom: 30px;
+    }
+
+    .btn {
+        width: 200px;
+    }
+    
+    .btn1 {
+        display: none;
+    }
+    
+    #egg {
+    height: 400px;
+    width: auto;
+    margin: 0 auto;   
+}
+    #iphone-2 {
+    height: 400px;
+   
+}
+
+#iphone-3 {
+    height: 500px;
+
+}
+    
+}
