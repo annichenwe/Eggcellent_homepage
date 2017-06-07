@@ -1,284 +1,237 @@
-*{
+* {
     box-sizing: border-box;
     /*border: 0.5px solid black;*/
 }
 
 body {
     font-family: 'Maven Pro', sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-/*PICTURE FADE-IN-ANIMATION TRIGGERD BY JAVASCRIPT*/
-.appear {
-    transform: translate(100%, 2px) scale(.8);
-    transition: transform 2.0s ease, opacity .9s ease;
-    opacity: 0;
-}
-
-.appear2 {
-    transform: translate(-80%, 2px) scale(.8);
-    transition: transform 2.0s ease, opacity 1.5s ease;
-    opacity: 0;
-}
-
-
-.visible {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-}
 
 
 /*HEADER*/
+
 .header {
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     background-color: white;
-    
     display: flex;
     justify-content: center;
-    
     text-align: center;
-    
     overflow: hidden;
 }
 
 .wrap {
-    background: linear-gradient(to bottom right, #FFD200, #F7971E);
+    /*background: linear-gradient(to bottom right, #FFD200, #F7971E);*/
+    background: #7FE6D6;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
 }
 
-#egg {
-    height: 600px;
-    width: auto;
-    margin: 0 auto;
-    
-    animation: egg 0.8s cubic-bezier(1, 1.19, 1, .99);
-}
-
-@keyframes egg {
-    0% { transform: scale(0.1);
-        opacity: 0; 
-    }
-    
-    100% { transform: scale(1);
-        opacity: 1; }
-}
-
-.anim {
-    animation: text-animation 1.5s cubic-bezier(1, 1.19, 1, .99);
-}
-
-@keyframes text-animation {
-    0%{ transform: translateY(200px);
-        opacity: 0;
-    }
-    90% {opacity: 0;}
-    100%{ transform: translateY(0px);
-        opacity: 1;
-    }
-}
 
 h1 {
-    margin-top: -400px;
+    margin-top: 10px;
     font-weight: 700;
-    font-size: 200px;
+    font-size: 100px;
     color: white;
     text-align: center;
     text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.40);
-    animation: txt 0.8s cubic-bezier(1, 1.19, 1, .99);
+    animation: txt-fade 2.0s forwards;
 }
 
-@keyframes txt {
-    0% { transform: scale(0.7);
-         
-    }
-    
-    100% { transform: scale(1);
-         }
-}
 
 .under-title {
     font-weight: 500;
-    margin-top: 180px;
+    transform: translateY(-60px);
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    animation: txt-fade2 2.0s forwards;
+    animation-delay: 1.0s;
 }
 
+
+#screens {
+    height: 400px;
+    width: auto;
+    margin: 0 auto;
+    transform: translateY(-30px);
+}
+
+.animation_screen {
+    animation: fade-in 2.0s forwards;
+    
+}
+
+/*ANIMATION HEADER*/
+
+@keyframes txt-fade{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes txt-fade2{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade-in{
+    0% {transform: translateY(100px);
+    opacity: 0;}
+    50% {opacity: 1;}
+    100% {transform: translateY(-60px);
+    opacity: 1;}
+}
+
+
 /*CLASSES USED FOR FLEX, SIZE AND HIGHT*/
+
 .contwrap {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    height: 85vh;
+    height: 40vh;
     width: 80vw;
+    text-align: center;
 }
 
-.picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.content {
+    width: 50%;
+    height: 500px;
+    
+    animation: fade-up 2.0s forwards;
 }
 
-.content{
+@keyframes fade-up {
+    0%{transform: translateY(40px);
+        opacity: 0;}
+    100%{transform: translateY(0px);
+        opacity: 1;}
+}
+
+.content2 {
     width: 50%;
     height: 500px;
 }
 
-.light {
-    background-color: white;
-}
-
 .dark {
-    background-color: rgba(253, 194, 8, 0.1)
+    background-color: #02AAB0;
 }
 
 h2 {
-    color: #F7971E;
-    font-size: 55px;
-    padding-left: 55px;
-    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.18);
+    color: white;
+    font-size: 40px;
+    padding-top: 80px;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18);
 }
 
-p{
-    padding-left: 55px;
-    padding-right: 45px;
-    color: black;
+p {
+    padding-left: 100px;
+    padding-right: 100px;
+    color: #fafafa;
     font-size: 20px;
-
 }
 
-/*PICTURES OF THE APP*/
-#img-one {
-    height: 800px;
-    
+#screens1{
+    width: 400px;
+    height: auto;
+}
+#screens2{
+    width: 400px;
+    height: auto;
 }
 
-#img-two {
-    height: 800px;
-    
-}
 
 /*DOWNLOAD SECTION*/
+
 .bottom {
-    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    height: 200px;
-    width: 900px;
+    height:auto;
+    width: 80vw;
 }
+
 
 .btn {
-    margin-top: 10px;
-    margin-left: 50px;
-    margin-right: 50px;
+    border-top: 1px solid white;
+    margin-top: -100px;
+    font-weight: 500;
     text-align: center;
-    font-size: 40px;
-    padding-top: 2px;
+    font-size: 25px;
+    padding-top: 20px;
     color: white;
-    background: linear-gradient(to bottom right, #FFD200, #F7971E);
-    border-radius: 45px;
-    width: 500px;
-    height: 60px;
+    
     cursor: pointer;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.18);
+    
 }
 
-.btn:active {
-    background: linear-gradient(to bottom right, #F7971E, #FFD200);
+a:hover {
+    color: #FFD200;
 }
-
 
 a {
     text-decoration: none;
 }
 
 
-
-
-
-
 /*RESPONSIV*/
 
 @media screen and (max-width: 900px) {
+    body{
+        overflow: visible;
+    }
     
     h1 {
-    margin-top: 0px;
-       font-size: 80px; 
+        margin-top: 2px;
+        font-size: 60px;
     }
-    
     .under-title {
-    margin-top: 0px;
-    font-size: 20px;
+        margin-top: 100px;
+        font-size: 20px;
     }
-    
     .content {
         width: 100vw;
+        height: 250px;
     }
-    
-    
     .contwrap {
         width: 100vw;
         height: auto;
         flex-direction: column;
     }
-    
     .wrapper1 {
         width: 100vw;
     }
-    
-    #iphone-2 {
-    
-    margin-top: 10px;
+   
+    #screens {
+        margin-top: 10px;
+        height: 230px;
     }
-    
-    #iphone-3 {
-    
-    margin-top: 10px;
-}
-    .text {
-        text-align: center;
-        padding: 15px;
-    }
-    
-    .text1 {
-        padding-bottom: 30px;
-    }
-
     .btn {
+        margin-top: 10px;
         margin-left: 0px;
         width: 200px;
     }
-    
     .btn1 {
         display: none;
     }
     
-    #egg {
-    height: 400px;
-    width: auto;
-    margin: 0 auto;   
-}
-    #iphone-2 {
-    height: 200px;
-   
-}
-
-#iphone-3 {
-    height: 200px;
-
-}
-    
     h2 {
-        font-size: 30px;
-        padding: 0;
-    }
-    
-    p {
-        padding: 0;
-    }
+    color: white;
+    font-size: 30px;
+    padding-top: 10px;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18);
+}
+
+p {
+    padding: 10px;
+    color: #fafafa;
+    font-size: 18px;
+}
+   
+   
 }
